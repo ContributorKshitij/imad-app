@@ -3,20 +3,50 @@ var morgan = require('morgan');
 var path = require('path');
 
 var app = express();
-var articleone = {
-    title: 'article-one',
-    heading: 'article-one',
-    date: '9 march 2018',
-    content: ` 
-           <p>
-            this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.
-        </p>
-    </div>
-    <div>
-        <p>
-            this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.
-        </p>`
-};
+app.use(morgan('combined'));
+var articles = {
+    var articleOne: {
+        title: 'article-one',
+        heading: 'article-one',
+        date: '9 march 2018',
+        content: ` 
+               <p>
+                this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.
+            </p>
+        </div>
+        <div>
+            <p>
+                this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.
+            </p>`
+    },
+    var articleTwo: {title: 'article-two',
+        heading: 'article-two',
+        date: '9 march 2018',
+        content: ` 
+               <p>
+                this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.
+            </p>
+        </div>
+        <div>
+            <p>
+                this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.
+            </p>`
+        
+ },
+    var articeThree: {  title: 'article-three',
+        heading: 'article-three',
+        date: '9 march 2018',
+        content: ` 
+               <p>
+                this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.
+            </p>
+        </div>
+        <div>
+            <p>
+                this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.this is a paragraph.
+            </p>`}
+    };
+
 function createTemplate(data){
 var title = data.title;
 var heading = data.heading;
@@ -48,14 +78,14 @@ var Template =`<html>
 `;
     return Template;
 }
-app.use(morgan('combined'));
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one',function(req,res){
-   res.send(createTemplate(articleone));
+   res.send(createTemplate(article-one));
 });
 app.get('/article-two',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
