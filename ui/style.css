@@ -22,5 +22,11 @@ body {
 
 .container
 {
-    color:grey;
+    max-width: 100px;
+    margin:  auto;
+    color: green;
+    font-family: sans-serif;
+    padding-top:60px;
+    padding-left:20px;
+    padding-right:20px;
 }
