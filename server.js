@@ -31,7 +31,7 @@ var articles = {
             </p>`
         
  },
-     'artice-three': {  title: 'article-three',
+     'article-three': {  title: 'article-three',
         heading: 'article-three',
         date: '9 march 2018',
         content: ` 
